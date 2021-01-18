@@ -112,7 +112,7 @@ module.exports = env => {
           libraryTarget: 'umd'
         }
       }
-    
+
       return merge(baseConfig, prodConfig)
     } else {
       const prodBrowserConfig = {
@@ -125,7 +125,7 @@ module.exports = env => {
           library: 'VuePivot'
         }
       }
-    
+
       return merge(baseConfig, prodBrowserConfig)
     }
   }
