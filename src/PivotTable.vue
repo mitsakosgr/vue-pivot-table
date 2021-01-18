@@ -8,7 +8,7 @@
     <div v-else-if="data.length === 0" class="alert alert-warning" role="alert">
       {{ noDataWarningText }}
     </div>
-    <table v-else class="table table-bordered">
+    <v-simple-table fixed-header>
 
       <!-- Table header -->
       <thead>
@@ -120,7 +120,7 @@
           ></th>
         </tr>
       </tfoot>
-    </table>
+    </v-simple-table>
   </div>
 </template>
 
