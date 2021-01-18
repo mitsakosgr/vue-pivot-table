@@ -28,9 +28,6 @@
   import PivotTable from '../src/PivotTable'
   import data from './data'
 
-  import Vuetify from 'vuetify'
-  import 'vuetify/dist/vuetify.min.css'
-
   export default {
     name: 'app',
     components: {Pivot, PivotTable},
