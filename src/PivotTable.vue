@@ -419,6 +419,7 @@ export default {
 <style scoped>
 tbody tr th {
   text-align: left;
+  padding-right: 20px;
 }
 
 td {
