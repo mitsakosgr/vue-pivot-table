@@ -409,6 +409,10 @@ export default {
 </script>
 
 <style scoped>
+tbody tr th {
+  text-align: left;
+}
+
 td {
   min-width: 100px;
 }
