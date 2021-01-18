@@ -16,6 +16,7 @@
              :col-fields="colFields"
              :default-show-settings="defaultShowSettings"
              :hide-empty="hideEmpty"
+             sort-columns
       >
       </pivot>
     </div>
@@ -109,33 +110,32 @@
 </script>
 
 <style lang="scss">
-  $enable-rounded: false;
-  @import '~bootstrap/scss/bootstrap.scss';
+$enable-rounded: false;
 
-  /* FontAwesome icons */
-  .svg-inline--fa.fa-fw {
-    width: 1.25em;
+/* FontAwesome icons */
+.svg-inline--fa.fa-fw {
+  width: 1.25em;
+}
+
+.svg-inline--fa {
+  display: inline-block;
+  font-size: inherit;
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em !important;
+}
+
+.fa-pulse {
+  animation: fa-spin 1s infinite steps(8);
+}
+
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
   }
 
-  .svg-inline--fa {
-    display: inline-block;
-    font-size: inherit;
-    height: 1em;
-    overflow: visible;
-    vertical-align: -.125em !important;
+  to {
+    transform: rotate(1turn);
   }
-
-  .fa-pulse {
-    animation: fa-spin 1s infinite steps(8);
-  }
-
-  @keyframes fa-spin {
-    0% {
-      transform: rotate(0deg);
-    }
-
-    to {
-      transform: rotate(1turn);
-    }
-  }
+}
 </style>

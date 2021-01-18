@@ -160,6 +160,10 @@ export default {
       type: Boolean,
       default: false
     },
+    sortColumns: {
+      type: Boolean,
+      default: true
+    },
   },
   data: function () {
     return {
@@ -174,16 +178,20 @@ export default {
     },
     // Sort cols/rows using a composed function built with thenBy.js
     sortedCols: function () {
-      let composedSortFunction
-      this.colFields.forEach((colField, colFieldIndex) => {
-        if (colFieldIndex === 0) {
-          composedSortFunction = firstBy('col-0', {cmp: colField.sort || naturalSort})
-        } else {
-          composedSortFunction = composedSortFunction.thenBy(`col-${colFieldIndex}`, {cmp: colField.sort || naturalSort})
-        }
-      })
+      if(this.sortColumns){
+        let composedSortFunction
+        this.colFields.forEach((colField, colFieldIndex) => {
+          if (colFieldIndex === 0) {
+            composedSortFunction = firstBy('col-0', {cmp: colField.sort || naturalSort})
+          } else {
+            composedSortFunction = composedSortFunction.thenBy(`col-${colFieldIndex}`, {cmp: colField.sort || naturalSort})
+          }
+        })
 
-      return [...this.cols].sort(composedSortFunction)
+        return [...this.cols].sort(composedSortFunction)
+      }else{
+        return this.cols;
+      }
     },
     sortedRows: function () {
       let composedSortFunction

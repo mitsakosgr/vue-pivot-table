@@ -89,6 +89,11 @@
           <input type="checkbox" v-model="internal.hideEmpty">
           Hide Empty
         </label>
+        <br>
+        <label class="form-check-label">
+          <input type="checkbox" v-model="internal.sortColumns">
+          Sort Columns
+        </label>
       </div>
       <!-- Horizontal Value fields -->
       <div class="col">
@@ -177,6 +182,7 @@
                      :no-data-warning-text="noDataWarningText"
                      :is-data-loading="isDataLoading"
                      :hide-empty="internal.hideEmpty"
+                     :sort-columns="internal.sortColumns"
                      ref="pivotTable">
           <!-- pass down scoped slots -->
           <template v-for="(slot, slotName) in $scopedSlots" :slot="slotName" slot-scope="{ value }">
@@ -259,6 +265,10 @@
     hideEmpty: {
       type: Boolean,
       default: false,
+    },
+    sortColumns: {
+      type: Boolean,
+      default: true,
     }
   },
   data: function () {
@@ -269,6 +279,7 @@
         colFields: this.colFields,
         valueFields: this.valueFields,
         hideEmpty: this.hideEmpty,
+        sortColumns: this.sortColumns,
       },
       allFunctions: [
         {title: 'Count', function: 'count'},
@@ -502,7 +513,7 @@
   font-size: inherit;
   height: 1em;
   overflow: visible;
-  vertical-align: -.125em;
+  vertical-align: -0.125em;
 }
 
 .btn-draggable .fa-grip-vertical {
