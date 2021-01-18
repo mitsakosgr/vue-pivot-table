@@ -428,7 +428,7 @@
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 /* Left column width */
 .left-col {
   min-width: 200px;

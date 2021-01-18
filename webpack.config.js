@@ -44,7 +44,26 @@ const baseConfig = {
         ]
       },
       {
-        test: /\.s(c|a)ss$/,
+        test: /\.(scss)$/,
+        use: [{
+          loader: 'vue-style-loader'
+        }, {
+          loader: 'css-loader'
+        }, {
+          loader: 'postcss-loader',
+          options: {
+            plugins: function () {
+              return [
+                require('autoprefixer')
+              ]
+            }
+          }
+        }, {
+          loader: 'sass-loader'
+        }]
+      },
+      {
+        test: /\.sass$/,
         use: [
           'vue-style-loader',
           'css-loader',

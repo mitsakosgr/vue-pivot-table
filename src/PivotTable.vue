@@ -128,7 +128,7 @@
 import HashTable from './HashTable'
 import {firstBy} from 'thenby'
 import naturalSort from 'javascript-natural-sort'
-import {VSimpleTable} from 'vuetify/lib/components/VDataTable/VSimpleTable'
+import {VSimpleTable} from 'vuetify/lib'
 
 export default {
   components:{
